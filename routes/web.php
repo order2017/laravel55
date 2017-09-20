@@ -90,3 +90,8 @@ Route::get('/test3',function (){
 
 
 });
+
+// -----------------------------------------------------------------------
+
+//
+Route::get('/jquery-form','Study\JqueryController@JqueryForm');
