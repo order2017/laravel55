@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Jquery-Form 序列化表单提交</title>
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -36,11 +36,28 @@
 
 <script type="text/javascript">
 
+    // 定义点击事件
     $("#queRen").click(function(){
 
-        str = $("formAdd").serialize();
+        // 判断input是否为空
 
-        alert(str);
+        if ($("#name").val()==""){
+
+            alert("姓名不能为空");
+
+            return false
+        }
+
+        // 定义接收表单序列化，并且赋值
+       var str = $("#formAdd").serialize();
+
+       // 定义解码，并且赋值
+        var str = decodeURIComponent(str,true);
+
+        // POST提交数据
+        $.post('/jquery-form',{string:str,'_token':'{{ csrf_token() }}'},function (data) {
+            console.log(data);
+        });
 
     });
 
