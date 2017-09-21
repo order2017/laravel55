@@ -30,6 +30,9 @@ Route::get('/page','Study\PageController@page');
 // 过滤数组重复数据
 Route::get('/filter','Study\FilterController@filter');
 
+// 一维数组模糊查询
+Route::get('/search','Study\SearchController@search');
+
 
 // ---------------------------------Jquery--------------------------------------
 
