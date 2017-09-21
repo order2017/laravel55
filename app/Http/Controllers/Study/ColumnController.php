@@ -55,7 +55,9 @@ class ColumnController extends Controller
 
         }
 
-       dd($newArray);
+       // dd($newArray);
+
+       return view('study.column.column-parent',['result'=>$newArray]);
 
     }
 
