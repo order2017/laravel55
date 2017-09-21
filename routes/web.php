@@ -24,6 +24,9 @@ Route::get('/column-parent','Study\ColumnController@ColumnParent');
 // 数组按照某个时间字段排序
 Route::get('/time-sort','Study\TimeController@TimeSort');
 
+// 数组简单的数组分页
+Route::get('/page','Study\PageController@page');
+
 
 // ---------------------------------Jquery--------------------------------------
 
