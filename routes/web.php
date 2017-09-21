@@ -21,6 +21,9 @@ Route::get('/', function () {
 // 栏目-----数组创建子数组赋值
 Route::get('/column-parent','Study\ColumnController@ColumnParent');
 
+// 数组按照某个时间字段排序
+Route::get('/time-sort','Study\TimeController@TimeSort');
+
 
 // ---------------------------------Jquery--------------------------------------
 
