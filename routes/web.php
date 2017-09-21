@@ -27,6 +27,9 @@ Route::get('/time-sort','Study\TimeController@TimeSort');
 // 数组简单的数组分页
 Route::get('/page','Study\PageController@page');
 
+// 过滤数组重复数据
+Route::get('/filter','Study\FilterController@filter');
+
 
 // ---------------------------------Jquery--------------------------------------
 
