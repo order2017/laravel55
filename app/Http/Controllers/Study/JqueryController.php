@@ -24,6 +24,9 @@ class JqueryController extends Controller
 
            // dd($result);
 
+            session(['string'=>$string]);
+            session(['result'=>$array]);
+
             return [
                 'data'=> $array,
                 'status_code'=> "0000",

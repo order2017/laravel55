@@ -63,5 +63,13 @@
 
 </script>
 
+<br>
+<pre>
+{{ session('string') }}
+</pre>
+
+<br>
+{{ dd(session('result')) }}
+
 </body>
 </html>
