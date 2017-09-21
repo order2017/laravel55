@@ -24,12 +24,12 @@ class TimeController extends Controller
         ];
 
         // 循环数组
-        foreach($data as $key=>$value){
+        /*foreach($data as $key=>$value){
 
             // 格式化时间，去除斜杠和冒号，赋值，定义覆盖时间值
             $data[$key]['created_at'] = date("YmdHis",strtotime($value['created_at']));
 
-        }
+        }*/
 
         // 定义新数组，赋值为空
         $datetime = [];
@@ -45,8 +45,9 @@ class TimeController extends Controller
         // 数组按照时间降序
         array_multisort($datetime,SORT_DESC,$data);
 
-        dd($data);
+        //dd($data);
 
+        return view('study.time.time-sort',['result'=>$data]);
     }
 
 }
