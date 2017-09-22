@@ -10,6 +10,15 @@
         .row {
             margin-top: 80px;
         }
+        #que_ren{
+            display: none;
+        }
+        #box_name{
+            width: 80%;
+        }
+        .form-control {
+            display: inline;
+        }
     </style>
 </head>
 <body>
@@ -38,7 +47,18 @@
 <div class="container">
     <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-12 col-sm-9">
-
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="输入名称" id="box_name">
+                <button class="btn btn-success" id="que_ren">确认</button>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="输入名称" id="box_name">
+                <button class="btn btn-success" id="que_ren">确认</button>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="输入名称" id="box_name">
+                <button class="btn btn-success" id="que_ren">确认</button>
+            </div>
         </div>
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
             <div class="list-group">
@@ -54,6 +74,30 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+
+    // 鼠标移入确认按钮展示 第一种方法
+
+    $("input[type=text]").focus(function(){
+
+        $("button").hide();
+
+        $(this).next("button").show();
+
+    });
+
+    // 鼠标移入确认按钮展示 第二种方法
+
+    /*$("#box_name").focus(function(){
+
+        $("#que_ren").hide();
+
+        $(this).next("#que_ren").show();
+
+    });*/
+
+</script>
 
 </body>
 </html>

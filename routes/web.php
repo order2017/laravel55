@@ -38,3 +38,6 @@ Route::get('/search','Study\SearchController@search');
 
 // Jquery-Form 序列化表单提交
 Route::any('/jquery-form','Study\JqueryController@JqueryForm');
+
+// Jquery 隐藏显示
+Route::any('/hide','Study\HideController@hide');
