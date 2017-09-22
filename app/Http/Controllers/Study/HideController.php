@@ -14,4 +14,14 @@ class HideController extends Controller
 
     }
 
+    public function hideStore(Request $request){
+
+        return [
+            'data'=>$request->except(['_token']),
+            'status_code'=>"0000",
+            'message'=>"success",
+        ];
+
+    }
+
 }

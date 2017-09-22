@@ -41,3 +41,4 @@ Route::any('/jquery-form','Study\JqueryController@JqueryForm');
 
 // Jquery 隐藏显示
 Route::any('/hide','Study\HideController@hide');
+Route::post('/hide','Study\HideController@hideStore');

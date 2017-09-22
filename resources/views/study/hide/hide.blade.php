@@ -13,7 +13,7 @@
         #que_ren{
             display: none;
         }
-        #box_name{
+        #pre,#box_name{
             width: 80%;
         }
         .form-control {
@@ -47,18 +47,18 @@
 <div class="container">
     <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-12 col-sm-9">
+
+            @for($i=1;$i<=3;$i++)
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="输入名称" id="box_name">
-                <button class="btn btn-success" id="que_ren">确认</button>
+                <input type="text" name="name" class="form-control" placeholder="输入名称" id="box_name">
+                <button class="btn btn-success" id="que_ren" onclick="edit(this)">确认</button>
             </div>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="输入名称" id="box_name">
-                <button class="btn btn-success" id="que_ren">确认</button>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="输入名称" id="box_name">
-                <button class="btn btn-success" id="que_ren">确认</button>
-            </div>
+            @endfor
+
+            <br>
+            <pre id="pre" class="msg">
+
+            </pre>
         </div>
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
             <div class="list-group">
@@ -96,6 +96,28 @@
         $(this).next("#que_ren").show();
 
     });*/
+
+    function edit(obj) {
+
+        var username = $(obj).prev("input").val();
+
+        if (username==""){
+
+            alert("名称不能为空");
+
+            return false
+
+        }
+
+        $.post('/hide',{'_token':'{{ csrf_token() }}',name:username},function (data) {
+
+           // console.log(data);
+
+            $('.msg').text(data);
+
+        },"text");
+
+    }
 
 </script>
 
