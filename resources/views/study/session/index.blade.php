@@ -39,6 +39,28 @@
     <div class="row row-offcanvas row-offcanvas-right">
         <div class="col-xs-12 col-sm-9">
 
+            <div class="row" style="margin-top: 10px;">
+                @foreach($result as $key=>$value)
+                <div class="col-sm-6 col-md-3">
+                    <div class="thumbnail">
+                        <img src="{{ $value['img'] }}" alt="通用的占位符缩略图">
+                        <div class="caption">
+                            <h3>{{ $value['name'] }}</h3>
+                            <p>{{ $value['price'] }} 元</p>
+                            <p>
+                                <a href="#" class="btn btn-primary" role="button">
+                                    购买
+                                </a>
+                                <a href="#" class="btn btn-default" role="button">
+                                    加入购物车
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+
         </div>
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
             <div class="list-group">

@@ -33,6 +33,10 @@ Route::get('/filter','Study\FilterController@filter');
 // 一维数组模糊查询
 Route::get('/search','Study\SearchController@search');
 
+//Session 中追加数据--显示
+Route::get('/session','Study\SessionController@index');
+Route::get('/session-store','Study\SessionController@Store');
+
 
 // ---------------------------------Jquery--------------------------------------
 
