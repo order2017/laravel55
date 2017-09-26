@@ -56,12 +56,14 @@
                 </tr>
                 </thead>
                 <tbody>
+                @foreach($data as $key=>$value)
                 <tr>
                     <td><img src="/assets/1.jpg" alt="" width="60"></td>
                     <td>苹果电脑</td>
                     <td>6900</td>
                     <td>1</td>
                 </tr>
+                @endforeach
                 <tr>
                     <td align="right">合计：</td>
                     <td colspan="2">3698</td>
