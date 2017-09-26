@@ -43,17 +43,15 @@
                 @foreach($result as $key=>$value)
                 <div class="col-sm-6 col-md-3">
                     <div class="thumbnail">
-                        <img src="{{ $value['img'] }}" alt="通用的占位符缩略图">
+                        <img src="{{ $value['img'] }}" alt="{{ $value['name'] }}">
                         <div class="caption">
                             <h3>{{ $value['name'] }}</h3>
                             <p>{{ $value['price'] }} 元</p>
                             <p>
-                                <a href="#" class="btn btn-primary" role="button">
-                                    购买
-                                </a>
-                                <a href="#" class="btn btn-default" role="button">
-                                    加入购物车
-                                </a>
+                                <a href="javascript:;" class="btn btn-primary" role="button">购买</a>
+                                <input type="hidden" name="num" value="1" id="goodsNumber">
+                                <a href="javascript:;" class="btn btn-default" role="button" id="addCar">加入购物车</a>
+                                <input type="hidden" name="id" value="{{ $value['id'] }}">
                             </p>
                         </div>
                     </div>
