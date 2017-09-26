@@ -43,46 +43,32 @@
         <div class="col-xs-12 col-sm-9">
 
             <div class="page-header">
-                <h3>商品页面</h3>
+                <h3>购物车页面</h3>
             </div>
 
-            <div class="row" style="margin-top: 10px;">
-                @foreach($result as $key=>$value)
-                <div class="col-sm-6 col-md-3">
-                    <div class="thumbnail">
-                        <img src="{{ $value['img'] }}" alt="{{ $value['name'] }}">
-                        <div class="caption">
-                            <h3>{{ $value['name'] }}</h3>
-                            <p>{{ $value['price'] }} 元</p>
-                            <p>
-                                <input type="text" class="form-control" name="num" value="1" id="goodsNumber-{{ $value['id'] }}">
-                            </p>
-                            <p>
-                                <a href="javascript:void(0);" class="btn btn-primary" role="button">购买</a>
-                                <a href="javascript:void(0);" class="btn btn-default" role="button" id="addCar-{{ $value['id'] }}">加入购物车</a>
-                                <input type="hidden" name="id" value="{{ $value['id'] }}" id="id-{{ $value['id'] }}">
-
-                                <script type="text/javascript">
-                                    $("#addCar-{{ $value['id'] }}").click(function(){
-
-                                        // 读取商品ID
-                                        var id=$("#id-{{ $value['id'] }}").val();
-
-                                        // 库存
-                                        var num=$("#goodsNumber-{{ $value['id'] }}").val();
-
-                                        // 加入购物车
-                                        window.location.href="/session-add?id="+id+"&num="+num;
-
-                                    });
-                                </script>
-
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                @endforeach
-            </div>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>图片</th>
+                    <th>名称</th>
+                    <th>价格</th>
+                    <th>数量</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><img src="/assets/1.jpg" alt="" width="60"></td>
+                    <td>苹果电脑</td>
+                    <td>6900</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td align="right">合计：</td>
+                    <td colspan="2">3698</td>
+                    <td><input type="button" value="去结算" class="btn btn-primary"></td>
+                </tr>
+                </tbody>
+            </table>
 
         </div>
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">

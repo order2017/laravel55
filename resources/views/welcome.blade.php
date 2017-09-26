@@ -50,7 +50,7 @@
                 <a href="/filter" class="list-group-item">过滤数组重复数据</a>
                 <a href="/search" class="list-group-item">数组模糊查询</a>
                 <a href="/hide" class="list-group-item">隐藏显示</a>
-                <a href="/session" class="list-group-item">Session中追加数据</a>
+                <a href="/session" class="list-group-item">Session中追加数据--购物车</a>
             </div>
         </div>
     </div>

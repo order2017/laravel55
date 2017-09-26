@@ -33,9 +33,13 @@ Route::get('/filter','Study\FilterController@filter');
 // 一维数组模糊查询
 Route::get('/search','Study\SearchController@search');
 
-//Session 中追加数据--显示
+// -----------------Session 中追加数据------------------
+// 商品页面显示
 Route::get('/session','Study\SessionController@index');
-Route::get('/session-store','Study\SessionController@Store');
+
+// 加入购物车页面
+Route::get('/session-cat','Study\SessionController@cat');
+Route::get('/session-add','Study\SessionController@addCat');
 
 
 // ---------------------------------Jquery--------------------------------------
