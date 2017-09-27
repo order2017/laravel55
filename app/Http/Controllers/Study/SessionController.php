@@ -91,4 +91,13 @@ class SessionController extends Controller
 
     }
 
+    // 清楚Session
+    public function clear(){
+
+        session()->forget('data');
+
+        return redirect()->back();
+
+    }
+
 }

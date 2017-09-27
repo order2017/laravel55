@@ -43,7 +43,7 @@
         <div class="col-xs-12 col-sm-9">
 
             <div class="page-header">
-                <h3>购物车页面</h3>
+                <h3>购物车页面 <small><a href="/session-clear">清空购物车</a></small></h3>
             </div>
 
             <table class="table table-bordered">
@@ -53,22 +53,45 @@
                     <th>名称</th>
                     <th>价格</th>
                     <th>数量</th>
+                    <th>合计</th>
+                    <th>操作</th>
                 </tr>
                 </thead>
                 <tbody>
+                @if(!empty($data))
+
+                    <?php $total=0; ?>
+
                 @foreach($data as $key=>$value)
-                <tr>
-                    <td><img src="/assets/1.jpg" alt="" width="60"></td>
-                    <td>苹果电脑</td>
-                    <td>6900</td>
-                    <td>1</td>
-                </tr>
+                    @foreach($value['goodsInfo'] as $val)
+
+                    <?php
+
+                    $money=$val['price']*$value['num'];
+
+                    $total+= $money;
+
+                    ?>
+
+                    <tr>
+                        <td><img src="{{ $val['img'] }}" alt="" width="60"></td>
+                        <td>{{ $val['name'] }}</td>
+                        <td>{{ $val['price'] }}</td>
+                        <td>{{ $value['num'] }}</td>
+                        <td>{{ $money }} 元</td>
+                        <td><a href="javascript:;"></a>删除</td>
+                    </tr>
+
+                    @endforeach
                 @endforeach
-                <tr>
-                    <td align="right">合计：</td>
-                    <td colspan="2">3698</td>
-                    <td><input type="button" value="去结算" class="btn btn-primary"></td>
-                </tr>
+                    <tr>
+                        <td colspan="6" align="center">总合计：{{ $total }} 元 &nbsp;&nbsp;&nbsp;<input type="button" value="去结算" class="btn btn-primary"></td>
+                    </tr>
+                @else
+                    <tr>
+                        <td colspan="6" align="center">暂无数据</td>
+                    </tr>
+                @endif
                 </tbody>
             </table>
 

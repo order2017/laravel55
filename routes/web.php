@@ -41,6 +41,9 @@ Route::get('/session','Study\SessionController@index');
 Route::get('/session-cat','Study\SessionController@cat');
 Route::get('/session-add','Study\SessionController@addCat');
 
+// 清楚Session
+Route::get('/session-clear','Study\SessionController@clear');
+
 
 // ---------------------------------Jquery--------------------------------------
 
