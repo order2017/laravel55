@@ -23,7 +23,6 @@ class SearchController extends Controller
 
         ];
 
-
         // 定义新数组，赋值空
         $arr = [];
 
@@ -35,7 +34,6 @@ class SearchController extends Controller
             if (strstr( $values , $keywords ) !== false ){
 
                 // array_push() 函数向第一个参数的数组尾部添加一个或多个元素（入栈），然后返回新数组的长度，该函数等于多次调用 $array[] = $value
-
 
                 array_push($arr, $values);  // 第一种方法
 
