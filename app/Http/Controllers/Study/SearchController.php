@@ -12,7 +12,7 @@ class SearchController extends Controller
     public function search(){
 
         // 搜索关键词
-        $keywords = '苹果';
+        $keywords = !empty($_GET['key']) ? $_GET['key'] : '苹果';
 
         // 创建一维数组
         $orders = [
@@ -45,7 +45,7 @@ class SearchController extends Controller
 
         }
 
-        dd($arr);
+        return view('study.search.one-search',['result'=>$arr]);
 
     }
 
