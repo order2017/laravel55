@@ -1,41 +1,31 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>数组栏目子栏目</title>
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style type="text/css" rel="stylesheet">
-        html,body{
-            margin: 10px 20% 100px 20%;
-        }
-    </style>
-</head>
-<body>
+@include('include._header')
 
-<div class="panel-group" id="accordion">
+<div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-12 col-sm-9">
 
-    @foreach($result as $list)
-    <div class="panel panel-primary">
-        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapse{{ $list['id'] }}">
-            <h4 class="panel-title">
-                {{ $list['name'] }}
-            </h4>
-        </div>
-        <div id="collapse{{ $list['id'] }}" class="panel-collapse collapse in">
-            <ul class="list-group">
+            <div class="panel-group" id="accordion">
 
-                @foreach($list['parent'] as $value)
-                <li class="list-group-item">{{ $value['name'] }}</li>
+                @foreach($result as $list)
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" data-toggle="collapse" data-parent="#accordion" data-target="#collapse{{ $list['id'] }}">
+                            <h4 class="panel-title">
+                                {{ $list['name'] }}
+                            </h4>
+                        </div>
+                        <div id="collapse{{ $list['id'] }}" class="panel-collapse collapse in">
+                            <ul class="list-group">
+
+                                @foreach($list['parent'] as $value)
+                                    <li class="list-group-item">{{ $value['name'] }}</li>
+                                @endforeach
+
+                            </ul>
+                        </div>
+                    </div>
                 @endforeach
 
-            </ul>
-        </div>
-    </div>
-    @endforeach
-
-</div>
+            </div>
 
 <pre>
     // 一级栏目
@@ -57,7 +47,12 @@
     ];
 </pre>
 
-{{ dd($result) }}
+        </div>
+        @include('include._column')
+    </div>
 
-</body>
-</html>
+    {{ dd($result) }}
+
+</div>
+
+@include('include._footer')

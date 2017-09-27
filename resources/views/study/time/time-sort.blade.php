@@ -1,36 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>数组按照某个时间字段排序</title>
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style type="text/css" rel="stylesheet">
-        html,body{
-            margin: 10px 13% 100px 13%;
-        }
-    </style>
-</head>
-<body>
+@include('include._header')
 
-<table class="table table-bordered">
-    <caption><h4>数组按照某个时间字段排序</h4></caption>
-    <thead>
-    <tr>
-        <th>名称</th>
-        <th>时间</th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach($result as $list)
-    <tr>
-        <td>{{ $list['name'] }}</td>
-        <td>{{ $list['created_at'] }}</td>
-    </tr>
-    @endforeach
-    </tbody>
-</table>
+<div class="container">
+    <div class="row row-offcanvas row-offcanvas-right">
+        <div class="col-xs-12 col-sm-9">
+
+            <table class="table table-bordered">
+                <caption><h4>数组按照某个时间字段排序</h4></caption>
+                <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>时间</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($result as $list)
+                    <tr>
+                        <td>{{ $list['name'] }}</td>
+                        <td>{{ $list['created_at'] }}</td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
 
 <pre>
     // 创建数组
@@ -46,7 +36,12 @@
     ];
 </pre>
 
-{{ dd($result) }}
+        </div>
+        @include('include._column')
+    </div>
 
-</body>
-</html>
+    {{ dd($result) }}
+
+</div>
+
+@include('include._footer')

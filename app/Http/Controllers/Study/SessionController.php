@@ -96,6 +96,10 @@ class SessionController extends Controller
 
         session()->forget('data');
 
+        // 清除表单序列化里面的数据
+        session()->forget('string');
+        session()->forget('result');
+
         return redirect()->back();
 
     }
